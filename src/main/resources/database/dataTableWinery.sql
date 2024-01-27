@@ -1,0 +1,22 @@
+
+insert into T_WINERY (NAME, OWNER) values ('Kuvin', 'Djina S');
+insert into T_WINERY (NAME, OWNER) values ('WinerySunsetVineyards', 'Nikola Ivanovski');
+insert into T_WINERY (NAME, OWNER) values ('WineryGoldenHarvest', 'Milena Popovic');
+insert into T_WINERY (NAME, OWNER) values ('WineryMajesticCellars', 'Stefan Jankovic');
+insert into T_WINERY (NAME, OWNER) values ('WineryVineyardBreeze', 'Ana Petrovic');
+insert into T_WINERY (NAME, OWNER) values ('WineryVintageCask', 'Dragan Kostic');
+insert into T_WINERY (NAME, OWNER) values ('WineryGrapesGalore', 'Jovana Radovanovic');
+insert into T_WINERY (NAME, OWNER) values ('WineryRoyalWines', 'Viktorija Stojanovic');
+insert into T_WINERY (NAME, OWNER) values ('WineryVelvetVines', 'Petar Stankovic');
+insert into T_WINERY (NAME, OWNER) values ('WineryDelightfulDrops', 'Ljubica Markovic');
+insert into T_WINERY (NAME, OWNER) values ('WineryEnchantingEstates', 'Igor Dimitrijevic');
+insert into T_WINERY (NAME, OWNER) values ('WineryBlissfulBarrels', 'Teodora Jovanovic');
+insert into T_WINERY (NAME, OWNER) values ('WinerySereneSips', 'Aleksandar Mladenovic');
+insert into T_WINERY (NAME, OWNER) values ('WineryGentleGrapes', 'Marija Pavlovic');
+insert into T_WINERY (NAME, OWNER) values ('WineryElegantEnoteca', 'Stojan Jovic');
+insert into T_WINERY (NAME, OWNER) values ('WineryHarmonyHills', 'Ivana Ristic');
+insert into T_WINERY (NAME, OWNER) values ('WineryPristinePlots', 'Nenad Arsic');
+insert into T_WINERY (NAME, OWNER) values ('WineryJovialJuice', 'Jelena Knezevic');
+insert into T_WINERY (NAME, OWNER) values ('WineryValleyVista', 'Vladimir Nikolic');
+insert into T_WINERY (NAME, OWNER) values ('WineryTwilightTannins', 'Tamara Milenkovic');
+insert into T_WINERY (NAME, OWNER) values ('WineryFabledFlavors', 'Filip Djordjevic');

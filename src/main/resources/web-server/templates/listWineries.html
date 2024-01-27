@@ -1,0 +1,50 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+<h1>All Wineries</h1>
+<!--todo-->
+
+<div th:if="${#lists.isEmpty(wineries)}">
+    <div class="alert alert-warning m-2">
+        No wineries found.
+    </div>
+    <div style="height: 2cm">&nbsp;</div>
+</div>
+
+<div th:if="${not #lists.isEmpty(wineries)}">
+    <p>
+        All wineries are:
+    </p>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Winery Name</th>
+            <th>Owner</th>
+            <th>Balance</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="wineryDTO : ${wineries}">
+            <td>
+                <a href="#" th:href="@{|/wineries/${wineryDTO.name}|}" th:text="${wineryDTO.name}">Winery Name</a>
+            </td>
+            <td th:text="${wineryDTO.owner}">Owner</td>
+            <td th:text="${wineryDTO.balance}">0</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div style="text-align: right">
+    Options: <a th:href="@{/}">Home</a> | <a th:href="@{/wineries/search}">Winery Search</a>
+</div>
+
+<div th:replace="footer :: copy"></div>
+</body>
+</html>

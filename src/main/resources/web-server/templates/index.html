@@ -1,0 +1,50 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+
+	<h1>Microservices - Web Server</h1>
+	<h3>Overview</h3>
+	<ul>
+		<li>Simple web-application for accessing wineries data.</li>
+		<li>All the wineryDTO information is fetched via a RESTful interface to a Wineries microservice.</li>
+	</ul>
+
+	<h3>Navigation</h3>
+
+	<ul class="openlist">
+		<li>Eureka Dashboard: <a
+			href="http://localhost:8080">http://localhost:8080</a></li>
+		<li>Check applications registered: <a
+			href="http://localhost:8080/eureka/apps/">http://localhost:8080/eureka/apps/</a></li>
+		<li>Fetch wineryDTO #Kuvin: <a th:href="@{/wineries/Kuvin}">/wineries/Kuvin</a></li>
+
+		<li>Fetch by owner: <a th:href="@{/wineries/owner/Djina}">/wineries/owner/Djina</a></li>
+		<li>List of wineries: <a th:href="@{/wineries/list}">/wineries/list</a></li>
+
+		<li>Winery <a th:href="@{/wineries/search}">Search</a></li>
+	</ul>
+
+	<h3>Spring Boot URLs</h3>
+	<p>For those interested, Spring Boot provides RESTful URLs for
+		interrogating your application (they return JSON format data):</p>
+
+	<ul>
+		<li><a th:href="@{/actuator/beans}">The beans</a></li>
+		<li><a th:href="@{/actuator/env}">The environment</a></li>
+		<li><a th:href="@{/actuator/health}">Application health</a></li>
+		<li><a th:href="@{/actuator/mappings}">URL Mappings</a> - including
+		     the /wineryDTO mappings</li>
+		<li><a th:href="@{/actuator/metrics}">Application metrics</a> - add any 
+		     metric name to the end of this URL, for example 
+		     <a th:href="@{/actuator/metrics/http.server.requests}">/actuator/metrics/http.server.requests</a></li>
+		<li><a th:href="@{/actuator}">List of actuator endpoints</a></li>
+	</ul>
+
+	<div th:replace="footer :: copy"></div>
+
+</body>
+</html>

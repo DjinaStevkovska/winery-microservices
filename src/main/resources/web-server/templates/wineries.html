@@ -1,0 +1,51 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+	<h1>Wineries by Name</h1>
+
+	<div th:if="not ${wineries}">
+		<div class="alert alert-warning m-2">
+			No wineries found containing '<span th:text="${search}">text</span>'.
+		</div>
+		<div style="height: 2cm">&nbsp;</div>
+	</div>
+
+	<div th:if="${wineries}">
+		<p>
+			Wineries whose owner contains ' <span th:text="${search}">text</span>'
+			are:
+		</p>
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Winery Name</th>
+					<th>Owner</th>
+					<th>Balance</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="wineryDTO : ${wineries}">
+					<td><a href="wineryDTO.html"
+						th:href="@{|/wineries/${wineryDTO.name}|}"
+						th:text="|${wineryDTO.name}|">11111111</a></td>
+					<td th:text="${wineryDTO.owner}">Owner</td>
+					<td th:text="${wineryDTO.balance}">0</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div style="text-align: right">
+		Options: <a th:href="@{/}">Home</a> | <a th:href="@{/wineries/search}">Winery
+			Search</a>
+	</div>
+
+	<div th:replace="footer :: copy"></div>
+</body>
+</html>

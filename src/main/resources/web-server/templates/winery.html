@@ -1,0 +1,42 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header :: copy"></head>
+
+<body>
+	<h1>Winery Details</h1>
+
+	<div th:if="not ${wineryDTO}">
+		<div class="m-3 alert alert-warning">
+			Unable to find wineryDTO '<span th:text="${name}">name</span>'
+		</div>
+		<div style="height: 2cm">&nbsp;</div>
+	</div>
+
+	<div th:if="${wineryDTO}" class="container">
+		<dl class="row">
+			<dt class="col-1">Name</dt>
+			<dd th:text="${wineryDTO.name}">name</dd>
+		</dl>
+		<dl class="row">
+			<dt class="col-1">Owner</dt>
+			<dd th:text="${wineryDTO.owner}">owner</dd>
+	    </dl>
+	    <dl class="row">
+			<dt class="col-1">Balance</dt>
+			<dd th:text="${wineryDTO.balance}">balance</dd>
+		</dl>
+	</div>
+
+	<div class="row" style="height: 2cm">&nbsp;</div>
+
+	<div class="row" style="text-align: right">
+	    <span class="col-12">
+		Options: &nbsp; <a th:href="@{/}">Home</a> | <a
+			th:href="@{/wineries/search}">Winery Search</a></span>
+	</div>
+
+	<div th:replace="footer :: copy"></div>
+</body>
+</html>
