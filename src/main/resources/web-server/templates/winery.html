@@ -7,25 +7,25 @@
 <body>
 	<h1>Winery Details</h1>
 
-	<div th:if="not ${wineryDTO}">
+	<div th:if="not ${winery}">
 		<div class="m-3 alert alert-warning">
-			Unable to find wineryDTO '<span th:text="${name}">name</span>'
+			Unable to find winery '<span th:text="${name}">name</span>'
 		</div>
 		<div style="height: 2cm">&nbsp;</div>
 	</div>
 
-	<div th:if="${wineryDTO}" class="container">
+	<div th:if="${winery}" class="container">
 		<dl class="row">
 			<dt class="col-1">Name</dt>
-			<dd th:text="${wineryDTO.name}">name</dd>
+			<dd th:text="${winery.name}">name</dd>
 		</dl>
 		<dl class="row">
 			<dt class="col-1">Owner</dt>
-			<dd th:text="${wineryDTO.owner}">owner</dd>
+			<dd th:text="${winery.owner}">owner</dd>
 	    </dl>
 	    <dl class="row">
 			<dt class="col-1">Balance</dt>
-			<dd th:text="${wineryDTO.balance}">balance</dd>
+			<dd th:text="${winery.balance}">balance</dd>
 		</dl>
 	</div>
 

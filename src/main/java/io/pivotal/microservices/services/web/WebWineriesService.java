@@ -42,11 +42,11 @@ public class WebWineriesService {
         logger.warning("The RestTemplate request factory is " + restTemplate.getRequestFactory().getClass());
     }
 
-    public WineryDTO findByName(String wineryName) {
+    public Winery findByName(String wineryName) {
 
         logger.info("findByName() invoked: for " + wineryName);
         try {
-            return restTemplate.getForObject(serviceUrl + "/wineries/{name}", WineryDTO.class, wineryName);
+            return restTemplate.getForObject(serviceUrl + "/wineries/{name}", Winery.class, wineryName);
         } catch (Exception e) {
             logger.severe(e.getClass() + ": " + e.getLocalizedMessage());
             return null;
@@ -54,12 +54,12 @@ public class WebWineriesService {
 
     }
 
-    public List<WineryDTO> byOwnerContains(String name) {
+    public List<Winery> byOwnerContains(String name) {
         logger.info("byOwnerContains() invoked:  for " + name);
-        WineryDTO[] wineries = null;
+        Winery[] wineries = null;
 
         try {
-            wineries = restTemplate.getForObject(serviceUrl + "/wineries/owner/{name}", WineryDTO[].class, name);
+            wineries = restTemplate.getForObject(serviceUrl + "/wineries/owner/{name}", Winery[].class, name);
         } catch (HttpClientErrorException e) { // 404
             // Nothing found
         }
@@ -70,12 +70,12 @@ public class WebWineriesService {
             return Arrays.asList(wineries);
     }
 
-    public WineryDTO getByName(String wineryName) {
-        WineryDTO wineryDTO = restTemplate.getForObject(serviceUrl + "/wineries/{name}", WineryDTO.class, wineryName);
+    public Winery getByName(String wineryName) {
+        Winery winery = restTemplate.getForObject(serviceUrl + "/wineries/{name}", Winery.class, wineryName);
 
-        if (wineryDTO == null)
+        if (winery == null)
             throw new WineryNotFoundException(wineryName);
         else
-            return wineryDTO;
+            return winery;
     }
 }

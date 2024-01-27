@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonRootName;
  * Winery DTO - used to interact with the {@link WebWineriesService}.
  */
 @JsonRootName("Winery")
-public class WineryDTO {
+public class Winery {
 
 	protected Long id;
 	protected String name;
@@ -19,7 +19,7 @@ public class WineryDTO {
 	/**
 	 * Default constructor for JPA only.
 	 */
-	protected WineryDTO() {
+	protected Winery() {
 		balance = BigDecimal.ZERO;
 	}
 

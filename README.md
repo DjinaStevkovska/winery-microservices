@@ -1,7 +1,7 @@
-# wineryDTO-microservices
+# winery-microservices
 
 
-![Structuer](https://github.com/x/wineryDTO-microservices/blob/master/structure.drawio.png)
+![Structuer](https://github.com/x/winery-microservices/blob/master/structure.drawio.png)
 
 
 
@@ -40,14 +40,14 @@ The `localhost:8082` web-site is handled by a Spring MVC Controller in the _WebS
 2. Build the package with maven or gradle:
    * `./mvnw clean package` or 
    * `./gradlew clean assemble`.
-   The following file will be generated: `target/wineryDTO-microservices-2.1.0.RELEASE.jar`
+   The following file will be generated: `target/winery-microservices-2.1.0.RELEASE.jar`
 
 3. Run in separate CMD windows on terminal in the project dir. 
    * Activity will be logged to each on app interaction.
     ```
-    java -jar target/wineryDTO-microservices-2.1.0.RELEASE.jar registration 8080
-    java -jar target/wineryDTO-microservices-2.1.0.RELEASE.jar wineries 8081
-    java -jar target/wineryDTO-microservices-2.1.0.RELEASE.jar web 8082
+    java -jar target/winery-microservices-2.1.0.RELEASE.jar registration 8080
+    java -jar target/winery-microservices-2.1.0.RELEASE.jar wineries 8081
+    java -jar target/winery-microservices-2.1.0.RELEASE.jar web 8082
     ```
 4. Check browser
 
@@ -59,15 +59,15 @@ The `localhost:8082` web-site is handled by a Spring MVC Controller in the _WebS
 
    
 For a list wineries refer to the 
-[dataTableWinery.sql](https://github.com/x/wineryDTO-microservices/blob/master/src/main/resources/database/dataTableWinery.sql) 
+[dataTableWinery.sql](https://github.com/x/winery-microservices/blob/master/src/main/resources/database/dataTableWinery.sql) 
 that is used by the Winery Service to set them up.
 
 ### Run second server on any port from CLI
-1. In a new CMD window, run a second wineryDTO-server using random HTTP port:
+1. In a new CMD window, run a second winery-server using random HTTP port:
    
-    `java -jar target/wineryDTO-microservices-2.1.0.RELEASE.jar wineries 7777`
+    `java -jar target/winery-microservices-2.1.0.RELEASE.jar wineries 7777`
 2. Allow it to register itself
-3. Kill the first wineryDTO-server and see the web-server switch to using the new wineryDTO-server - no loss of service.
+3. Kill the first winery-server and see the web-server switch to using the new winery-server - no loss of service.
 
 ## Using Docker
 

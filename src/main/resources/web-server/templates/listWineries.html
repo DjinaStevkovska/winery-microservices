@@ -30,12 +30,12 @@
         </thead>
 
         <tbody>
-        <tr th:each="wineryDTO : ${wineries}">
+        <tr th:each="winery : ${wineries}">
             <td>
-                <a href="#" th:href="@{|/wineries/${wineryDTO.name}|}" th:text="${wineryDTO.name}">Winery Name</a>
+                <a href="#" th:href="@{|/wineries/${winery.name}|}" th:text="${winery.name}">Winery Name</a>
             </td>
-            <td th:text="${wineryDTO.owner}">Owner</td>
-            <td th:text="${wineryDTO.balance}">0</td>
+            <td th:text="${winery.owner}">Owner</td>
+            <td th:text="${winery.balance}">0</td>
         </tr>
         </tbody>
     </table>

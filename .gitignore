@@ -7,8 +7,8 @@
 .gradle/
 build/
 gradle.properties~
-wineryDTO-microservices.ipr
-wineryDTO-microservices.iws
+winery-microservices.ipr
+winery-microservices.iws
 
 
 target/

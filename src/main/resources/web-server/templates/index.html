@@ -10,7 +10,7 @@
 	<h3>Overview</h3>
 	<ul>
 		<li>Simple web-application for accessing wineries data.</li>
-		<li>All the wineryDTO information is fetched via a RESTful interface to a Wineries microservice.</li>
+		<li>All the winery information is fetched via a RESTful interface to a Wineries microservice.</li>
 	</ul>
 
 	<h3>Navigation</h3>
@@ -20,7 +20,7 @@
 			href="http://localhost:8080">http://localhost:8080</a></li>
 		<li>Check applications registered: <a
 			href="http://localhost:8080/eureka/apps/">http://localhost:8080/eureka/apps/</a></li>
-		<li>Fetch wineryDTO #Kuvin: <a th:href="@{/wineries/Kuvin}">/wineries/Kuvin</a></li>
+		<li>Fetch winery #Kuvin: <a th:href="@{/wineries/Kuvin}">/wineries/Kuvin</a></li>
 
 		<li>Fetch by owner: <a th:href="@{/wineries/owner/Djina}">/wineries/owner/Djina</a></li>
 		<li>List of wineries: <a th:href="@{/wineries/list}">/wineries/list</a></li>
@@ -37,7 +37,7 @@
 		<li><a th:href="@{/actuator/env}">The environment</a></li>
 		<li><a th:href="@{/actuator/health}">Application health</a></li>
 		<li><a th:href="@{/actuator/mappings}">URL Mappings</a> - including
-		     the /wineryDTO mappings</li>
+		     the /winery mappings</li>
 		<li><a th:href="@{/actuator/metrics}">Application metrics</a> - add any 
 		     metric name to the end of this URL, for example 
 		     <a th:href="@{/actuator/metrics/http.server.requests}">/actuator/metrics/http.server.requests</a></li>

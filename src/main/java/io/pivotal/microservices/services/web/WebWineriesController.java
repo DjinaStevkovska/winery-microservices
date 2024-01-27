@@ -45,15 +45,15 @@ public class WebWineriesController {
 
         logger.info("web-service byName() invoked: " + wineryName);
 
-        WineryDTO wineryDTO = wineriesService.findByName(wineryName);
+        Winery winery = wineriesService.findByName(wineryName);
 
-        if (wineryDTO == null) { // no such winery
+        if (winery == null) { // no such winery
             model.addAttribute("name", wineryName);
             return "winery";
         }
 
-        logger.info("web-service byName() found: " + wineryDTO);
-        model.addAttribute("winery", wineryDTO);
+        logger.info("web-service byName() found: " + winery);
+        model.addAttribute("winery", winery);
         return "winery";
     }
 
@@ -61,7 +61,7 @@ public class WebWineriesController {
     public String ownerSearch(Model model, @PathVariable("wineryOwner") String name) {
         logger.info("web-service byOwner() invoked: " + name);
 
-        List<WineryDTO> wineries = wineriesService.byOwnerContains(name);
+        List<Winery> wineries = wineriesService.byOwnerContains(name);
         logger.info("web-service byOwner() found: " + wineries);
         model.addAttribute("search", name);
         if (wineries != null)

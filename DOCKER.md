@@ -13,7 +13,7 @@ Run Wineries Microservice application #githubrepo with three docker containers f
      *`[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.`
      * `[ERROR] Re-run Maven using the -X switch to enable full debug logging.`
 
-This will create the jar: `target/wineryDTO-microservices-1.2.0.RELEASE.jar`
+This will create the jar: `target/winery-microservices-1.2.0.RELEASE.jar`
 
 2. Install Docker on Linux Ubuntu:
 
@@ -28,7 +28,7 @@ sudo systemctl enable docker
 
     ```sh
     FROM openjdk:8-jre
-    ADD target/wineryDTO-microservices-1.2.0.RELEASE.jar app.jar
+    ADD target/winery-microservices-1.2.0.RELEASE.jar app.jar
     EXPOSE 8080
     EXPOSE 8081
     EXPOSE 8082
@@ -122,7 +122,7 @@ We will run the container three times, each time running the Java application in
 
 1. Check Eureka Dashboard.  You should see that `WINERIES-SERVICE` is now registered.
 
-1. _In a new CMD/Terminal window_, run a third container for the wineries web-service. This is a web-application for viewing wineryDTO information by requesting wineryDTO data from the wineries microservice.
+1. _In a new CMD/Terminal window_, run a third container for the wineries web-service. This is a web-application for viewing winery information by requesting winery data from the wineries microservice.
 
     ```sh
     docker run --name web --hostname web --network wineries-net -p 8082:8082 microservice java -jar app.jar web --registration.server.hostname=<IP ADDRESS from eureka server>
@@ -130,4 +130,4 @@ We will run the container three times, each time running the Java application in
 
 1. Return to the Eureka Dashboard in your browser and refresh the screen.  You should see that `WINERIES-SERVICE` and `WEB-SERVICE` are now registered.
 
-1. In a second browser tab, go to http://localhost:8082.  This is the web interface you just deployed and you should be able to view, list and search for wineryDTO information.
+1. In a second browser tab, go to http://localhost:8082.  This is the web interface you just deployed and you should be able to view, list and search for winery information.
