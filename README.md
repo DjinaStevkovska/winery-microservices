@@ -89,3 +89,11 @@ This application can also be run using 3 docker containers. See [here](DOCKER.md
 2. Give permissions: ```chmod +x my_script.sh```
 
 3. Run the script: ```./scripts/my_script.sh```
+
+## Issue starting server
+Check for the servers port usage. Example for Eureka:
+```angular2html
+ps aux | grep '8080'
+sudo lsof -i :8080
+sudo kill -9 <PID>
+```
