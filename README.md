@@ -1,7 +1,7 @@
 # winery-microservices
 
 
-![Structuer](https://github.com/x/winery-microservices/blob/master/structure.drawio.png)
+![Structure](https://github.com/DjinaStevkovska/winery-microservices/blob/main/structure.drawio.png)
 
 
 
@@ -59,7 +59,7 @@ The `localhost:8082` web-site is handled by a Spring MVC Controller in the _WebS
 
    
 For a list wineries refer to the 
-[dataTableWinery.sql](https://github.com/x/winery-microservices/blob/master/src/main/resources/database/dataTableWinery.sql) 
+[dataTableWinery.sql](https://github.com/DjinaStevkovska/winery-microservices/blob/main/src/main/resources/database/dataTableWinery.sql) 
 that is used by the Winery Service to set them up.
 
 ### Run second server on any port from CLI
